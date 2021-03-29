@@ -1,6 +1,6 @@
 {
   "name": "@brancol-ui/react",
-  "version": "0.0.3",
+  "version": "0.0.6",
   "description": "The first Design System made with Tailwind CSS",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -31,10 +31,12 @@
     "build:types": "tsc --emitDeclarationOnly --declaration --declarationDir dist/types",
     "test:cov": "yarn test --coverage",
     "lint:src": "eslint src --ext .ts,.tsx --config ../../.eslintrc",
-    "lint:types": "tsc --noEmit"
+    "lint:types": "tsc --noEmit",
+    "prepublish": "yarn test && yarn build"
   },
   "dependencies": {
-    "@brancol-ui/button": "^0.0.2",
+    "@brancol-ui/button": "^0.0.5",
+    "@brancol-ui/textfield": "^0.0.1",
     "@brancol-ui/utils": "^0.0.1"
   },
   "peerDependencies": {

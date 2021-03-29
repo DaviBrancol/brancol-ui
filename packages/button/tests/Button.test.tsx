@@ -55,7 +55,7 @@ describe("[Component] - Button", () => {
 
     const btnComponent = await getByTestId("button")
 
-    await waitFor(() => expect(btnComponent).toHaveClass("border border-blue-600"))
+    await waitFor(() => expect(btnComponent).toHaveClass("border border-primary-600"))
   })
 
   it("should have link variant for styling", async () => {
@@ -63,7 +63,15 @@ describe("[Component] - Button", () => {
 
     const btnComponent = await getByTestId("button")
 
-    await waitFor(() => expect(btnComponent).not.toHaveClass("border bg-blue-600"))
+    await waitFor(() => expect(btnComponent).not.toHaveClass("border bg-primary-600"))
+  })
+
+  it("should have small size with string parameter", async () => {
+    const { getByTestId } = render(<Mocking size="sm">Test Button</Mocking>)
+
+    const btnComponent = await getByTestId("button")
+
+    await waitFor(() => expect(btnComponent).toHaveClass("px-4 py-2"))
   })
 
   it("should have small size", async () => {
